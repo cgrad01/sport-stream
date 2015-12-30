@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div class="header">
+      <div class="container">
+        <h1>Carlie is cool</h1>
+
+      </div>
+    </div>
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+        <h2> {{ name }}</h2>
+        <div ng-if="!threads">
+          Loading...
+        </div>
+        <div ng-repeat="thread in threads">
+          <a ng-href="{{thread.data.url}}"> {{ thread.data.title }}</a>
+          <p> Author: {{ thread.data.author }} </p>
+        </div>
+
+      </div>
+    </div>
+
+<!-- Modules -->
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/MainController.js"></script>
+
+  </body>
+</html>
