@@ -18,7 +18,7 @@
         </div>
         <div ng-repeat="thread in threads">
           <a ng-href="{{thread.data.url}}"> {{ thread.data.title }}</a>
-          <p> Author: {{ thread.data.author }} </p>
+          <p class="btn btn-primary"> Author: {{ thread.data.author }} </p>
         </div>
 
       </div>
@@ -33,9 +33,6 @@
 <!--Services -->
 <script src="js/services/reddit.js"></script>
 
-<!-- Bootstrap -->
-<link rel="stylesheet"
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   </body>
 </html>
