@@ -1,18 +1,7 @@
-app.controller('MainController', function($scope, $http) {
+app.controller('MainController', ["$scope", "reddit", function($scope, reddit) {
   $scope.name = "Sports App";
-  $scope.threads = [];
 
-  function filterThreads() {
-    $http.get("http://www.reddit.com/r/NYKnicks.json")
-    .success(function(response){
-      for(i=0; i < response.data.children.length; i++){
-        if(response.data.children[i].data.domain === "self.NYKnicks"){
-          $scope.threads.push(response.data.children[i]);
-        }
-      }
-    });
-  };
-
-  filterThreads();
-
-});
+  reddit.success(function(data) {
+    $scope.threads = data.data.children;
+  });
+}]);
